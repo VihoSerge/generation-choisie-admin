@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\ItemModel;
+//use App\Models\ItemModel;
 use CodeIgniter\API\ResponseTrait;
 
 class ItemController extends BaseController
@@ -11,9 +11,9 @@ class ItemController extends BaseController
 
     public function index()
     {
-        $item = new ItemModel();
-        $data = $item->findAll();
+        // $item = new ItemModel();
+        // $data = $item->findAll();
 
-        return $this->respond($data, 200);
+        // return $this->respond($data, 200);
     }
 }

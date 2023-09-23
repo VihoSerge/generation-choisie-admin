@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\PodcastModel;
+//use App\Models\PodcastModel;
 use CodeIgniter\API\ResponseTrait;
 
 class PodcastController extends BaseController
@@ -12,9 +12,9 @@ class PodcastController extends BaseController
 
     public function index()
     {
-        $podcast = new PodcastModel();
-        $data = $podcast->findAll();
+        // $podcast = new PodcastModel();
+        // $data = $podcast->findAll();
 
-        return $this->respond($data, 200);
+        // return $this->respond($data, 200);
     }
 }

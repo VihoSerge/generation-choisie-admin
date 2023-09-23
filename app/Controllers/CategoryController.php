@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\CategoryModel;
+//use App\Models\CategoryModel;
 use CodeIgniter\API\ResponseTrait;
 
 class CategoryController extends BaseController

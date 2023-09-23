@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\CoverModel;
+//use App\Models\CoverModel;
 use CodeIgniter\API\ResponseTrait;
 
 class CoverController extends BaseController
@@ -11,9 +11,9 @@ class CoverController extends BaseController
 
     public function index()
     {
-        $cover = new CoverModel();
-        $data = $cover->findAll();
+        // $cover = new CoverModel();
+        // $data = $cover->findAll();
 
-        return $this->respond($data, 200);
+        // return $this->respond($data, 200);
     }
 }
