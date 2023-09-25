@@ -1,0 +1,22 @@
+CRITICAL - 2023-09-25 21:48:32 --> Undefined variable $podcast
+in APPPATH\Views\Home\podcast.php on line 176.
+ 1 APPPATH\Views\Home\podcast.php(176): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $podcast', 'C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\Home\\podcast.php', 176)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\Home\\podcast.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Home/podcast', [], true)
+ 5 APPPATH\Controllers\Home.php(209): view('Home/podcast', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->podcast()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-25 21:48:53 --> Undefined array key "title"
+in APPPATH\Views\Home\podcast.php on line 179.
+ 1 APPPATH\Views\Home\podcast.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\Home\\podcast.php', 179)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\Home\\podcast.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Home/podcast', [], true)
+ 5 APPPATH\Controllers\Home.php(209): view('Home/podcast', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->podcast()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
