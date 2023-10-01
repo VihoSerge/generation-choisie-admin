@@ -197,15 +197,73 @@ class Home extends BaseController
         ],
     ];
 
+    protected $item = [
+        [
+            'id' => 1,
+            'name' => 'Item1',
+            'url' => 'https://www.youtube.com/watch?v=QCgCsBmNG6k&pp=ygUQcHJpZXJlIGluc3BpcsOpZQ%3D%3D'
+        ],
+        [
+            'id' => 2,
+            'name' => 'Item2',
+            'url' => 'https://www.youtube.com/watch?v=UlW_-ZNpUVQ&pp=ygUQcHJpZXJlIGluc3BpcsOpZQ%3D%3D'
+        ],
+        [
+            'id' => 3,
+            'name' => 'Item3',
+            'url' => 'https://www.youtube.com/watch?v=ge-Li4YpEKM&pp=ygUQcHJpZXJlIGluc3BpcsOpZQ%3D%3D'
+        ],
+        [
+            'id' => 4,
+            'name' => 'Item4',
+            'url' => 'https://www.youtube.com/watch?v=U66sqSgn4XE&pp=ygUQcHJpZXJlIGluc3BpcsOpZQ%3D%3D'
+        ],
+    ];
+
+    protected $categories = [
+        [
+            'id' => 1,
+            'name' => 'Priere inspirees',
+            'thumbnail_url' => 'https://images.unsplash.com/photo-1437603568260-1950d3ca6eab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJheXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60'
+        ],
+        [
+            'id' => 2,
+            'name' => 'Bonjour chez vous',
+            'thumbnail_url' => 'https://images.unsplash.com/photo-1437603568260-1950d3ca6eab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJheXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60'
+        ],
+        [
+            'id' => 3,
+            'name' => 'Parole de femmes',
+            'thumbnail_url' => 'https://images.unsplash.com/photo-1437603568260-1950d3ca6eab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJheXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60'
+        ],
+        [
+            'id' => 4,
+            'name' => 'Face a Face',
+            'thumbnail_url' => 'https://images.unsplash.com/photo-1437603568260-1950d3ca6eab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJheXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60'
+        ],
+    ];
+
     public function index()
     {
         $data['covers'] = $this->covers;
-        return view('Home/welcome_message', $data);
+        return view('banner/banner', $data);
     }
 
     public function podcast()
     {
         $data['podcast'] = $this->podcast;
-        return view('Home/podcast', $data);
+        return view('podcast/podcast', $data);
+    }
+
+    public function category()
+    {
+        $data['category'] = $this->categories;
+        return view('category/category', $data);
+    }
+
+    public function item()
+    {
+        $data['item'] = $this->item;
+        return view('item/item', $data);
     }
 }

@@ -8,6 +8,8 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/', 'Home::index');
 $routes->get('/podcast', 'Home::podcast');
+$routes->get('/item', 'Home::item');
+$routes->get('/category', 'Home::category');
 
 
 //API ROUTES
