@@ -2,6 +2,17 @@
 
 <?= $this->section('content') ?>
 
+<?php
+if (session()->getFlashdata('status')) {
+?>
+  <div class="alert-list">
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> <?= session()->getFlashdata('status'); ?>
+    </div>
+  </div>
+<?php
+}
+?>
 <div class="breadcomb-area">
   <div class="container">
     <div class="row">
@@ -21,7 +32,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
               <div class="breadcomb-report">
-                <button data-toggle="tooltip" data-placement="left" title="Ajouter une banniere" class="btn"><i class="notika-icon notika-paperclip"></i> Ajouter</button>
+                <a href="<?= base_url('podcast/create') ?>"><button data-toggle="tooltip" data-placement="left" title="Ajouter un podcast" class="btn"><i class="notika-icon notika-paperclip"></i>Ajouter</button></a>
               </div>
             </div>
           </div>
@@ -47,6 +58,7 @@
                   <th>ID</th>
                   <th>Noms</th>
                   <th>Urls</th>
+                  <th>Descriptions</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -55,9 +67,14 @@
                   <tr>
                     <td><?= $podcastItem['id'] ?></td>
                     <td><?= $podcastItem['name'] ?></td>
-                    <td><?= substr($podcastItem['url'], 0, 40) ?>...</td>
+                    <td><?= $podcastItem['url'] ?></td>
+                    <?php if ($podcastItem['description']) { ?>
+                      <td><?= $podcastItem['description'] ?></td>
+                    <?php } else { ?>
+                      <td>Aucune description</td>
+                    <?php } ?>
                     <td>
-                      <button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button>
+                      <a href="<?= base_url('podcast/edit/' . $podcastItem['id']) ?>"><button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button></a>
                       <button class=" btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>
                     </td>
                   </tr>

@@ -39,4 +39,9 @@ class CoverController extends BaseController
 
         return $this->respond($data, 200);
     }
+
+    public function create()
+    {
+        return view('cover/create');
+    }
 }

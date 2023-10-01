@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\PodcastModel;
+
 class Home extends BaseController
 {
 
@@ -246,12 +248,15 @@ class Home extends BaseController
     public function index()
     {
         $data['covers'] = $this->covers;
-        return view('banner/banner', $data);
+        return view('cover/cover', $data);
     }
 
     public function podcast()
     {
-        $data['podcast'] = $this->podcast;
+        $podcast = new PodcastModel();
+
+        $data['podcast'] = $podcast->findAll();
+        //return $this->respond($data);
         return view('podcast/podcast', $data);
     }
 

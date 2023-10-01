@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                             <div class="breadcomb-report">
-                                <button data-toggle="tooltip" data-placement="left" title="Ajouter une banniere" class="btn"><i class="notika-icon notika-paperclip"></i> Ajouter</button>
+                                <a href="<?= base_url('item/create') ?>"><button data-toggle="tooltip" data-placement="left" title="Ajouter une video" class="btn"><i class="notika-icon notika-paperclip"></i>Ajouter</button></a>
                             </div>
                         </div>
                     </div>
