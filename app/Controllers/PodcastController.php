@@ -89,4 +89,16 @@ class PodcastController extends BaseController
 
         return redirect()->to(base_url('podcast'))->with('status', "Podcast modifié avec succes");
     }
+
+    public function delete($id = null)
+    {
+        $podcast = new PodcastModel();
+
+
+        $podcast->delete($id);
+
+
+
+        return;
+    }
 }

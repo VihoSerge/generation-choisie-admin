@@ -75,7 +75,8 @@ if (session()->getFlashdata('status')) {
                     <?php } ?>
                     <td>
                       <a href="<?= base_url('podcast/edit/' . $podcastItem['id']) ?>"><button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button></a>
-                      <button class=" btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>
+
+                      <button value="<?= $podcastItem['id'] ?>" class="confirm_del_btn btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -87,4 +88,25 @@ if (session()->getFlashdata('status')) {
     </div>
   </div>
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('scripts') ?>
+<script>
+  $(document).ready(function() {
+    $('.confirm_del_btn').click(function(e) {
+      e.preventDefault();
+      var id = $(this).val();
+
+      if (confirm("Voulez vous vraiment supprimer ce podcast?")) {
+        $.ajax({
+          url: "<?= base_url('podcast/delete/') ?>" + id,
+          success: function(response) {
+            window.location.reload()
+            alert("Podcast supprimé.")
+          }
+        });
+      }
+    });
+  });
+</script>
 <?= $this->endSection() ?>

@@ -26,6 +26,8 @@ $routes->get('podcast/create', 'PodcastController::create');
 $routes->post('podcast/add', 'PodcastController::add');
 $routes->get('podcast/edit/(:num)', 'PodcastController::edit/$1');
 $routes->put('podcast/update/(:num)', 'PodcastController::update/$1');
+$routes->get('podcast/delete/(:num)', 'PodcastController::delete/$1');
+
 
 
 //API ROUTES
