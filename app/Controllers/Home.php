@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CoverModel;
 use App\Models\PodcastModel;
 
 class Home extends BaseController
@@ -247,7 +248,8 @@ class Home extends BaseController
 
     public function index()
     {
-        $data['covers'] = $this->covers;
+        $cover = new CoverModel();
+        $data['covers'] =  $cover->findAll();
         return view('cover/cover', $data);
     }
 

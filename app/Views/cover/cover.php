@@ -21,7 +21,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
               <div class="breadcomb-report">
-                <button data-toggle="tooltip" data-placement="left" title="Ajouter une banniere" class="btn"><i class="notika-icon notika-paperclip"></i> <a href="<?= base_url('cover/create') ?>">Ajouter</a></button>
+                <a href="<?= base_url('cover/create') ?>"><button data-toggle="tooltip" data-placement="left" title="Ajouter une banniere" class="btn"><i class="notika-icon notika-paperclip"></i>Ajouter</button></a>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@
                   <tr>
                     <td><?= $cover['id'] ?></td>
                     <td><?= $cover['title'] ?></td>
-                    <td><img src="<?= $cover['url'] ?>" style="width:50px;heigth:50px;" alt=""></td>
+                    <td><img src="<?= base_url($cover['url']) ?>" style="width:50px;heigth:50px; object-fit:contain" alt=""></td>
                     <td>
                       <button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button>
                       <button class=" btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>

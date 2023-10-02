@@ -3,11 +3,15 @@
 namespace App\Controllers;
 
 //use App\Models\CoverModel;
+
+use App\Models\CoverModel;
 use CodeIgniter\API\ResponseTrait;
 
 class CoverController extends BaseController
 {
     use ResponseTrait;
+
+    protected $helpers = ['form'];
 
     protected $covers = [
         [
@@ -43,5 +47,33 @@ class CoverController extends BaseController
     public function create()
     {
         return view('cover/create');
+    }
+
+    public function add()
+    {
+        $cover = new CoverModel();
+        if (!is_dir('./assets/'))
+            mkdir('./assets/');
+        $title = $this->request->getPost('name');
+        $file = $this->request->getFile('file');
+        $fname = $file->getRandomName();
+        while (true) {
+            $check = $cover->where("url", "assets/{$fname}")->countAllResults();
+            if ($check > 0) {
+                $fname = $file->getRandomName();
+            } else {
+                break;
+            }
+        }
+        if ($file->move("assets/", $fname)) {
+            $cover->save([
+                "title" => $title,
+                "url" => "assets/" . $fname
+            ]);
+
+            return redirect()->to('/');
+        } else {
+        }
+        return;
     }
 }

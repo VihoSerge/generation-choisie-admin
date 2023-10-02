@@ -20,7 +20,7 @@ $routes->get('item/create', 'ItemController::create');
 
 //Categories routes
 $routes->get('cover/create', 'CoverController::create');
-
+$routes->post('cover/add', 'CoverController::add');
 //Podcasts routes
 $routes->get('podcast/create', 'PodcastController::create');
 $routes->post('podcast/add', 'PodcastController::add');

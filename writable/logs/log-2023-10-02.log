@@ -23,3 +23,59 @@ INFO - 2023-10-02 10:37:35 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-10-02 10:37:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-10-02 10:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-10-02 10:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-02 10:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-02 10:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-02 11:46:25 --> Undefined variable $input
+in APPPATH\Controllers\CoverController.php on line 62.
+ 1 APPPATH\Controllers\CoverController.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $input', 'C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Controllers\\CoverController.php', 62)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\CoverController->add()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoverController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 11:46:48 --> Call to a member function move() on null
+in APPPATH\Controllers\CoverController.php on line 66.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\CoverController->add()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoverController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 12:25:41 --> Call to a member function getRandomName() on null
+in APPPATH\Controllers\CoverController.php on line 59.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\CoverController->add()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoverController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-02 12:27:13 --> mysqli_sql_exception: Unknown column 'path' in 'where clause' in C:\xampp\htdocs\generation-choisie-admin\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\generation-choisie-admin\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\generation-choisie-admin\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\generation-choisie-admin\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\generation-choisie-admin\system\Database\BaseBuilder.php(1699): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\generation-choisie-admin\system\Model.php(599): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\generation-choisie-admin\app\Controllers\CoverController.php(61): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\generation-choisie-admin\system\CodeIgniter.php(919): App\Controllers\CoverController->add()
+#7 C:\xampp\htdocs\generation-choisie-admin\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoverController))
+#8 C:\xampp\htdocs\generation-choisie-admin\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\generation-choisie-admin\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-10-02 12:27:13 --> Unknown column 'path' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1699): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `covers`
+WHERE `path` = :path:', [...], false)
+ 2 SYSTEMPATH\Model.php(599): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\CoverController.php(61): CodeIgniter\Model->countAllResults()
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\CoverController->add()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoverController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 12:48:30 --> Undefined array key "title"
+in APPPATH\Views\cover\cover.php on line 57.
+ 1 APPPATH\Views\cover\cover.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\cover\\cover.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\cover\\cover.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 5 APPPATH\Controllers\Home.php(252): view('cover/cover', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
