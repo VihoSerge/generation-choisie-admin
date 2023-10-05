@@ -25,6 +25,18 @@ class CoverController extends BaseController
     public function add()
     {
         $cover = new CoverModel();
+        $validationRule = [
+            'file' => [
+                'rules' => [
+                    'uploaded[file]',
+                    'is_image[file]',
+                    'mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                ],
+            ],
+        ];
+        if (! $this->validate($validationRule)) {
+            return redirect('cover/create')->with('error', "Erreur lors de l'ajout de l'image. ");
+        }
         if (!is_dir('./assets/'))
             mkdir('./assets/');
         $title = $this->request->getPost('name');
@@ -64,7 +76,19 @@ class CoverController extends BaseController
     public function update($id = null)
     {
         $cover = new CoverModel();
-       if (!empty($this->request->getFile('file'))) {
+       if ($_FILES['file']['name']) {
+        $validationRule = [
+            'file' => [
+                'rules' => [
+                    'uploaded[file]',
+                    'is_image[file]',
+                    'mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                ],
+            ],
+        ];
+        if (! $this->validate($validationRule)) {
+            return redirect('/')->with('error', "Erreur lors de l'ajout de l'image. ");
+        }
         if (!is_dir('./assets/'))
         mkdir('./assets/');
     $title = $this->request->getPost('name');
@@ -84,21 +108,21 @@ class CoverController extends BaseController
             "title" => $title,
             "url" => "assets/" . $fname
         ])) {
-            return redirect('cover/create')->with('success', "Banniere modifié avec succes");
+            return redirect('/')->with('success', "Banniere modifié avec succes");
         } 
 
     } else {
-        return redirect('cover/create')->with('error', "Une erreur s'est produite.");
+        return redirect('/')->with('error', "Une erreur s'est produite.");
     }
        } else {
         $title = $this->request->getPost('name');
         if (  $cover->update($id,[
             "title" => $title
         ])) {
-            return redirect('cover/create')->with('success', "Banniere modifié avec succes");
+            return redirect('/')->with('success', "Banniere modifié avec succes");
         } 
         else {
-            return redirect('cover/create')->with('error', "Une erreur s'est produite.");
+            return redirect('/')->with('error', "Une erreur s'est produite.");
         }
        }
        

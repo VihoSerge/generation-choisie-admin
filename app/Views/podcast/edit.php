@@ -3,29 +3,6 @@
 <?= $this->section('content') ?>
 <div class="form-example-area">
     <div class="container">
-    <?php
-        if (session()->getFlashdata('success')) {
-        ?>
-            <div class="alert-list">
-                <div class="alert alert-success alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> <?= session()->getFlashdata('success'); ?>
-                </div>
-            </div>
-        <?php
-        }
-        ?>
-
-        <?php
-        if (session()->getFlashdata('error')) {
-        ?>
-            <div class="alert-list">
-                <div class="alert alert-danger alert-dismissible alert-mg-b-0" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button><?= session()->getFlashdata('error'); ?>
-                </div>
-            </div>
-        <?php
-        }
-        ?>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-example-wrap">
