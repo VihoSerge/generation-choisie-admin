@@ -14,7 +14,10 @@ $routes->get('/category', 'Home::category');
 
 //Covers routes
 $routes->get('cover/create', 'CoverController::create');
-
+$routes->post('cover/add', 'CoverController::add');
+$routes->get('cover/edit/(:num)', 'CoverController::edit/$1');
+$routes->put('cover/update/(:num)', 'CoverController::update/$1');
+$routes->get('cover/delete/(:num)', 'CoverController::delete/$1');
 //Items routes
 $routes->get('item/create', 'ItemController::create');
 

@@ -8,7 +8,7 @@
         ?>
             <div class="alert-list">
                 <div class="alert alert-success alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> Le podcast a été ajouté avec succes.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> <?= session()->getFlashdata('success'); ?>
                 </div>
             </div>
         <?php
@@ -20,7 +20,7 @@
         ?>
             <div class="alert-list">
                 <div class="alert alert-danger alert-dismissible alert-mg-b-0" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> Erreur d'ajout du podcast. Assurez-vous de saisir au moins le lien et le nom du podcast.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button><?= session()->getFlashdata('error'); ?>
                 </div>
             </div>
         <?php
@@ -37,7 +37,7 @@
                             <div class="form-group">
                                 <label>Nom</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Veuillez saisir le nom du podcast" name="name">
+                                    <input type="text" class="form-control input-sm" placeholder="Veuillez saisir le nom du podcast" name="name" required>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                             <div class="form-group">
                                 <label>Lien du podcast</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Veuillez saisir le lien du podcast" name="url">
+                                    <input type="text" class="form-control input-sm" placeholder="Veuillez saisir le lien du podcast" name="url" required>
                                 </div>
                             </div>
                         </div>

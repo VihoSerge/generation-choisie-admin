@@ -88,7 +88,7 @@
   <?= $this->renderSection('content') ?>
 
 
-  <div class="footer-copyright-area">
+  <!-- <div class="footer-copyright-area">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -98,7 +98,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- jquery
 		============================================ -->
@@ -186,7 +186,7 @@
   <script src="<?= base_url('admin-template/js/chosen/chosen.jquery.js') ?>"></script>
   <!--  Chat JS
 		============================================ -->
-  <script src="<?= base_url('admin-template/js/chat/jquery.chat.js') ?>"></script>
+  <!-- <script src="<?= base_url('admin-template/js/chat/jquery.chat.js') ?>"></script> -->
   <!--  todo JS
 		============================================ -->
   <script src="<?= base_url('admin-template/js/todo/jquery.todo.js') ?>"></script>
@@ -198,7 +198,7 @@
   <script src="<?= base_url('admin-template/js/main.js') ?>"></script>
   <!-- tawk chat JS
 		============================================ -->
-  <script src="<?= base_url('admin-template/js/tawk-chat.js') ?>"></script>
+  <!-- <script src="/js/tawk-chat.js"></script> -->
 
   <?= $this->renderSection('scripts') ?>
 </body>

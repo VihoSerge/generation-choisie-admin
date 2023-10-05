@@ -3,16 +3,28 @@
 <?= $this->section('content') ?>
 
 <?php
-if (session()->getFlashdata('status')) {
-?>
-  <div class="alert-list">
-    <div class="alert alert-success alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> <?= session()->getFlashdata('status'); ?>
-    </div>
-  </div>
-<?php
-}
-?>
+        if (session()->getFlashdata('success')) {
+        ?>
+            <div class="alert-list">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> <?= session()->getFlashdata('success'); ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
+
+        <?php
+        if (session()->getFlashdata('error')) {
+        ?>
+            <div class="alert-list">
+                <div class="alert alert-danger alert-dismissible alert-mg-b-0" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button><?= session()->getFlashdata('error'); ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
 <div class="breadcomb-area">
   <div class="container">
     <div class="row">
@@ -23,12 +35,6 @@ if (session()->getFlashdata('status')) {
               <div class="breadcomb-ctn">
                 <h2 class="align-center">Podcasts</h2>
               </div>
-              <!-- <div class="breadcomb-wp">
-                                     <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-windows"></i>
-                                    </div> 
-                                    
-                                </div> -->
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
               <div class="breadcomb-report">
@@ -101,8 +107,8 @@ if (session()->getFlashdata('status')) {
         $.ajax({
           url: "<?= base_url('podcast/delete/') ?>" + id,
           success: function(response) {
-            window.location.reload()
             alert("Podcast supprimé.")
+            window.location.reload()
           }
         });
       }

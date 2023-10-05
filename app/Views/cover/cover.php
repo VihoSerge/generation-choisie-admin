@@ -12,12 +12,7 @@
               <div class="breadcomb-ctn">
                 <h2 class="align-center">Bannieres</h2>
               </div>
-              <!-- <div class="breadcomb-wp">
-                                     <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-windows"></i>
-                                    </div> 
-                                    
-                                </div> -->
+            
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
               <div class="breadcomb-report">
@@ -57,8 +52,8 @@
                     <td><?= $cover['title'] ?></td>
                     <td><img src="<?= base_url($cover['url']) ?>" style="width:50px;heigth:50px; object-fit:contain" alt=""></td>
                     <td>
-                      <button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button>
-                      <button class=" btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>
+                    <a href="<?= base_url('cover/edit/' . $cover['id']) ?>"><button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button></a>
+                    <button value="<?= $cover['id'] ?>" class="confirm_del_btn btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -71,4 +66,25 @@
   </div>
 </div>
 
+<?= $this->endSection() ?>
+
+<?= $this->section('scripts') ?>
+<script>
+  $(document).ready(function() {
+    $('.confirm_del_btn').click(function(e) {
+      e.preventDefault();
+      var id = $(this).val();
+
+      if (confirm("Voulez vous vraiment supprimer cette banniere?")) {
+        $.ajax({
+          url: "<?= base_url('cover/delete/') ?>" + id,
+          success: function(response) {
+            window.location.reload()
+            alert("Banniere supprimée.")
+          }
+        });
+      }
+    });
+  });
+</script>
 <?= $this->endSection() ?>
