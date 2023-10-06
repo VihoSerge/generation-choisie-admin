@@ -47,18 +47,24 @@ class PodcastController extends BaseController
 
     public function update($id = null)
     {
-        $podcast = new PodcastModel();
-        $data = [
-            'name' => $this->request->getPost('name'),
-            'url' => $this->request->getPost('url'),
-            'description' => $this->request->getPost('description')
-        ];
-
-        if ($podcast->update($id, $data)) {
-            return redirect('podcast/edit')->with('success', "Podcast modifié avec succes");
+        if ($this->request->getPost('name') && $this->request->getPost('url')) {
+            $podcast = new PodcastModel();
+            $data = [
+                'name' => $this->request->getPost('name'),
+                'url' => $this->request->getPost('url'),
+                'description' => $this->request->getPost('description')
+            ];
+    
+            if ($podcast->update($id, $data)) {
+                return redirect('podcast')->with('success', "Podcast modifié avec succes");
+            } else {
+                return redirect('podcast')->with('error', "Une erreur s'est produite.");
+            }
         } else {
-            return redirect('podcast/edit')->with('error', "Une erreur s'est produite.");
+            return redirect('podcast')->with('error', "Une erreur s'est produite. Veuillez saisir au moins le nom et l'url du podcast pour la modification.");
         }
+        
+     
     }
 
     public function delete($id = null)
