@@ -46,9 +46,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($category as $categoryItem) : ?>
+                                <?php $i = 0; foreach ($category as $categoryItem) : ?>
                                     <tr>
-                                        <td><?= $categoryItem['id'] ?></td>
+                                        <td><?= ++$i ?></td>
                                         <td><?= $categoryItem['name'] ?></td>
                                         <td><?= substr($categoryItem['thumbnail_url'], 0, 40) ?>...</td>
                                         <td>

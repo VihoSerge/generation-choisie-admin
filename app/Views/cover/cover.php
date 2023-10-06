@@ -69,9 +69,9 @@
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($covers as $cover) : ?>
+                <?php $i = 0; foreach ($covers as $cover) : ?>
                   <tr>
-                    <td><?= $cover['id'] ?></td>
+                    <td><?= ++$i ?></td>
                     <td><?= $cover['title'] ?></td>
                     <td><img src="<?= base_url($cover['url']) ?>" style="width:50px;heigth:50px; object-fit:contain" alt=""></td>
                     <td>

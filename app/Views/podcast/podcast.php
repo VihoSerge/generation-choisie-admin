@@ -69,9 +69,9 @@
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($podcast as $podcastItem) : ?>
+                <?php $i = 0; foreach ($podcast as $podcastItem) : ?>
                   <tr>
-                    <td><?= $podcastItem['id'] ?></td>
+                    <td><?= ++$i ?></td>
                     <td><?= $podcastItem['name'] ?></td>
                     <td><?= $podcastItem['url'] ?></td>
                     <?php if ($podcastItem['description']) { ?>

@@ -46,9 +46,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($item as $singleItem) : ?>
+                                <?php $i = 0; foreach ($item as $singleItem) : ?>
                                     <tr>
-                                        <td><?= $singleItem['id'] ?></td>
+                                        <td><?= ++$i ?></td>
                                         <td><?= $singleItem['name'] ?></td>
                                         <td><?= substr($singleItem['url'], 0, 40) ?>...</td>
                                         <td>
