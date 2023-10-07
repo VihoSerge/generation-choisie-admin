@@ -1,8 +1,11 @@
-<?= $this->extend('\layouts\frontend.php') ?>
+<?= $this->extend('/layouts/frontend.php') ?>
 
 <?= $this->section('content') ?>
 
-<?php
+
+<div class="breadcomb-area">
+  <div class="container">
+  <?php
         if (session()->getFlashdata('success')) {
         ?>
             <div class="alert-list">
@@ -25,8 +28,6 @@
         <?php
         }
         ?>
-<div class="breadcomb-area">
-  <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="breadcomb-list">

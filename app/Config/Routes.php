@@ -22,8 +22,11 @@ $routes->get('cover/delete/(:num)', 'CoverController::delete/$1');
 $routes->get('item/create', 'ItemController::create');
 
 //Categories routes
-$routes->get('cover/create', 'CoverController::create');
-$routes->post('cover/add', 'CoverController::add');
+$routes->get('category/create', 'CategoryController::create');
+$routes->post('category/add', 'CategoryController::add');
+$routes->get('category/edit/(:num)', 'CategoryController::edit/$1');
+$routes->put('category/update/(:num)', 'CategoryController::update/$1');
+$routes->get('category/delete/(:num)', 'CategoryController::delete/$1');
 //Podcasts routes
 $routes->get('podcast/create', 'PodcastController::create');
 $routes->post('podcast/add', 'PodcastController::add');
