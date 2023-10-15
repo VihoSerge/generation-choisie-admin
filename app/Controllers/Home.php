@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\CategoryModel;
 use App\Models\CoverModel;
+use App\Models\ItemModel;
 use App\Models\PodcastModel;
 
 class Home extends BaseController
@@ -264,13 +266,23 @@ class Home extends BaseController
 
     public function category()
     {
-        $data['category'] = $this->categories;
+        $category = new CategoryModel();
+        $data['category'] =  $category->findAll();
         return view('category/category', $data);
     }
 
     public function item()
     {
-        $data['item'] = $this->item;
+        $item = new ItemModel();
+        $category = new CategoryModel();
+        $categories = $category->findAll();
+        $array = array();
+
+        foreach ($categories as $value){
+            $array[$value['id']] = $value['name'];
+        }
+        $data['item'] =  $item->findAll();
+        $data['category'] = $array;
         return view('item/item', $data);
     }
 }

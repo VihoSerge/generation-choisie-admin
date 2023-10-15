@@ -20,7 +20,10 @@ $routes->put('cover/update/(:num)', 'CoverController::update/$1');
 $routes->get('cover/delete/(:num)', 'CoverController::delete/$1');
 //Items routes
 $routes->get('item/create', 'ItemController::create');
-
+$routes->post('item/add', 'ItemController::add');
+$routes->get('item/edit/(:num)', 'ItemController::edit/$1');
+$routes->put('item/update/(:num)', 'ItemController::update/$1');
+$routes->get('item/delete/(:num)', 'ItemController::delete/$1');
 //Categories routes
 $routes->get('category/create', 'CategoryController::create');
 $routes->post('category/add', 'CategoryController::add');

@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                             <div class="breadcomb-report">
-                                <button data-toggle="tooltip" data-placement="left" title="Ajouter une banniere" class="btn"><i class="notika-icon notika-paperclip"></i> Ajouter</button>
+                            <a href="<?= base_url('category/create') ?>"><button data-toggle="tooltip" data-placement="left" title="Ajouter une banniere" class="btn"><i class="notika-icon notika-paperclip"></i>Ajouter</button></a>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Noms</th>
-                                    <th>Urls</th>
+                                    <th>Images</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -50,10 +50,10 @@
                                     <tr>
                                         <td><?= ++$i ?></td>
                                         <td><?= $categoryItem['name'] ?></td>
-                                        <td><?= substr($categoryItem['thumbnail_url'], 0, 40) ?>...</td>
+                                        <td><img src="<?= base_url($categoryItem['thumbnail_url']) ?>" style="width:50px;heigth:50px; object-fit:contain" alt=""></td>
                                         <td>
-                                            <button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button>
-                                            <button class=" btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>
+                                            <a href="<?= base_url('category/edit/' . $categoryItem['id']) ?>"><button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button></a>
+                                            <button value="<?= $categoryItem['id'] ?>" class="confirm_del_btn btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -65,4 +65,25 @@
         </div>
     </div>
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('scripts') ?>
+<script>
+  $(document).ready(function() {
+    $('.confirm_del_btn').click(function(e) {
+      e.preventDefault();
+      var id = $(this).val();
+
+      if (confirm("Voulez vous vraiment supprimer ce programme?")) {
+        $.ajax({
+          url: "<?= base_url('category/delete/') ?>" + id,
+          success: function(response) {
+            window.location.reload()
+            alert("Programme supprimé.")
+          }
+        });
+      }
+    });
+  });
+</script>
 <?= $this->endSection() ?>

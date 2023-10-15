@@ -3,40 +3,64 @@
 <?= $this->section('content') ?>
 <div class="form-example-area">
     <div class="container">
+    <?php
+        if (session()->getFlashdata('success')) {
+        ?>
+            <div class="alert-list">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> <?= session()->getFlashdata('success'); ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
+
+        <?php
+        if (session()->getFlashdata('error')) {
+        ?>
+            <div class="alert-list">
+                <div class="alert alert-danger alert-dismissible alert-mg-b-0" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button><?= session()->getFlashdata('error'); ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="form-example-wrap">
-                    <div class="cmp-tb-hd">
-                        <h2>Ajouter un programme</h2>
-                    </div>
+            <div class="form-example-wrap">
+                <div class="cmp-tb-hd">
+                    <h2>Ajouter un programme</h2>
+                </div>
+                <form action="<?= base_url('category/add') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-example-int">
                         <div class="form-group">
-                            <label>Nom</label>
+                            <label>Nom du programme</label>
                             <div class="nk-int-st">
-                                <input type="text" class="form-control input-sm" placeholder="Veuillez saisir le nom de la banniere">
+                                <input type="text" name="name" class="form-control input-sm" placeholder="Veuillez saisir le nom du programme" required>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="dropdone-nk mg-t-30">
-                            <!-- <div class="cmp-tb-hd">
-                                <h2>Glisser deposer l'image de la bannier</h2>
-                            </div> -->
-                            <div id="dropzone1" class="multi-uploader-cs">
-                                <form action="/upload" class="dropzone dropzone-nk needsclick" id="demo1-upload">
-                                    <div class="dz-message needsclick download-custom">
-                                        <i class="notika-icon notika-cloud"></i>
-                                        <h2>Deposer l'image ici ou cliquer pour ajouter.</h2>
-                                    </div>
-                                </form>
+
+                    <div class="form-example-int">
+                        <div class="form-group">
+                            <label>Image du programme</label>
+                            <div class="nk-int-st">
+                                <input class="form-control input-sm" type="file" name="file" required />
                             </div>
                         </div>
                     </div>
+
+
                     <div class="form-example-int mg-t-15">
                         <button class="btn btn-success notika-btn-success">Ajouter</button>
                     </div>
-                </div>
+
+
+                </form>
+
+
             </div>
+            <!-- </div> -->
         </div>
 
     </div>

@@ -11,6 +11,7 @@ class ItemModel extends Model
     protected $allowedFields = [
         'description',
         'name',
-        'url'
+        'url',
+        'categoryid'
     ];
 }

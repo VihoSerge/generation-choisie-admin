@@ -42,6 +42,7 @@
                                     <th>ID</th>
                                     <th>Noms</th>
                                     <th>Urls</th>
+                                    <th>Programmes</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -50,7 +51,8 @@
                                     <tr>
                                         <td><?= ++$i ?></td>
                                         <td><?= $singleItem['name'] ?></td>
-                                        <td><?= substr($singleItem['url'], 0, 40) ?>...</td>
+                                        <td><?= substr($singleItem['url'], 0, 40) ?></td>
+                                        <td><?= $category[$singleItem['categoryid']] ?></td>
                                         <td>
                                             <button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button>
                                             <button class=" btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>

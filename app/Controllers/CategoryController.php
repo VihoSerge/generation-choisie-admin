@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 //use App\Models\CategoryModel;
+
+use App\Models\CategoryModel;
 use CodeIgniter\API\ResponseTrait;
 
 class CategoryController extends BaseController
@@ -34,9 +36,127 @@ class CategoryController extends BaseController
 
     public function index()
     {
-        //$category = new CategoryModel();
-        $data = $this->categories;
-
+        $category = new CategoryModel();
+        $data = $category->findAll();
         return $this->respond($data, 200);
+    }
+
+    public function create()
+    {
+        return view('category/create');
+    }
+
+    public function add()
+    {
+        $category = new CategoryModel();
+        $validationRule = [
+            'file' => [
+                'rules' => [
+                    'uploaded[file]',
+                    'is_image[file]',
+                    'mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                ],
+            ],
+        ];
+        if (! $this->validate($validationRule)) {
+            return redirect('category/create')->with('error', "Erreur lors de l'ajout de l'image. ");
+        }
+        if (!is_dir('./assets/'))
+            mkdir('./assets/');
+        $name = $this->request->getPost('name');
+        $file = $this->request->getFile('file');
+        $fname = $file->getRandomName();
+        while (true) {
+            $check = $category->where("thumbnail_url", "assets/{$fname}")->countAllResults();
+            if ($check > 0) {
+                $fname = $file->getRandomName();
+            } else {
+                break;
+            }
+        }
+        if ($file->move("assets/", $fname)) {
+
+            if ( $category->save([
+                "name" => $name,
+                "thumbnail_url" => "assets/" . $fname
+            ])) {
+                return redirect('category/create')->with('success', "Programme ajouté avec succes");
+            } 
+
+        } else {
+            return redirect('category/create')->with('error', "Une erreur s'est produite.");
+        }
+        return;
+    }
+
+    public function edit($id = null)
+    {
+        $category = new CategoryModel();
+
+        $data['category'] = $category->find($id);
+        return view('category/edit', $data);
+    }
+
+    public function update($id = null)
+    {
+        $category = new CategoryModel();
+       if ($_FILES['file']['name']) {
+        $validationRule = [
+            'file' => [
+                'rules' => [
+                    'uploaded[file]',
+                    'is_image[file]',
+                    'mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                ],
+            ],
+        ];
+        if (! $this->validate($validationRule)) {
+            return redirect('category')->with('error', "Erreur lors de l'ajout de l'image. ");
+        }
+        if (!is_dir('./assets/'))
+        mkdir('./assets/');
+    $name = $this->request->getPost('name');
+    $file = $this->request->getFile('file');
+    $fname = $file->getRandomName();
+    while (true) {
+        $check = $category->where("thumbnail_url", "assets/{$fname}")->countAllResults();
+        if ($check > 0) {
+            $fname = $file->getRandomName();
+        } else {
+            break;
+        }
+    }
+    if ($file->move("assets/", $fname)) {
+      
+        if (  $category->update($id,[
+            "name" => $name,
+            "thumbnail_url" => "assets/" . $fname
+        ])) {
+            return redirect('category')->with('success', "Programme modifié avec succes");
+        } 
+
+    } else {
+        return redirect('category')->with('error', "Une erreur s'est produite.");
+    }
+       } else {
+        $name = $this->request->getPost('name');
+        if (  $category->update($id,[
+            "name" => $name
+        ])) {
+            return redirect('category')->with('success', "Banniere modifié avec succes");
+        } 
+        else {
+            return redirect('category')->with('error', "Une erreur s'est produite.");
+        }
+       }
+       
+        return;
+    }
+
+    public function delete($id = null)
+    {
+        $category = new CategoryModel();
+        $category->delete($id);
+        return;
     }
 }

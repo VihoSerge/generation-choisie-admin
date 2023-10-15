@@ -2,7 +2,10 @@
 
 namespace App\Controllers;
 
-//use App\Models\ItemModel;
+
+
+use App\Models\ItemModel;
+use App\Models\CategoryModel;
 use CodeIgniter\API\ResponseTrait;
 
 class ItemController extends BaseController
@@ -42,6 +45,28 @@ class ItemController extends BaseController
 
     public function create()
     {
-        return view('item/create');
+        $category = new CategoryModel();
+        $data['category'] = $category->findAll();
+        return view('item/create',$data);
+    }
+
+    public function add()
+    {
+        if ($this->request->getPost('name') == null || $this->request->getPost('url') == null) {
+            return redirect('item/create')->with('error', "Veuillez saisir au moins le nom et l'URL");
+        }
+        $item = new ItemModel();
+        $data = [
+            'name' => $this->request->getPost('name'),
+            'url' => $this->request->getPost('url'),
+            'description' => $this->request->getPost('description'),
+            "categoryid" => $this->request->getPost('programme')
+        ];
+
+        if ($item->save($data)) {
+            return redirect('item/create')->with('success', "Vidéo ajoutée avec succes");
+        } else {
+            return redirect('item/create')->with('error', "Une erreur s'est produite.");
+        }
     }
 }
