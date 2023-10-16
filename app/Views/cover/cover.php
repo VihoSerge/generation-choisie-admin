@@ -98,7 +98,7 @@
       e.preventDefault();
       var id = $(this).val();
 
-      if (confirm("Voulez vous vraiment supprimer cette banniere?")) {
+      if (confirm("Voulez-vous vraiment supprimer cette banniere?")) {
         $.ajax({
           url: "<?= base_url('cover/delete/') ?>" + id,
           success: function(response) {

@@ -28,6 +28,29 @@
 
 <div class="data-table-area">
     <div class="container">
+    <?php
+        if (session()->getFlashdata('success')) {
+        ?>
+            <div class="alert-list">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> <?= session()->getFlashdata('success'); ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
+
+        <?php
+        if (session()->getFlashdata('error')) {
+        ?>
+            <div class="alert-list">
+                <div class="alert alert-danger alert-dismissible alert-mg-b-0" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button><?= session()->getFlashdata('error'); ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="data-table-list">
@@ -54,8 +77,8 @@
                                         <td><?= substr($singleItem['url'], 0, 40) ?></td>
                                         <td><?= $category[$singleItem['categoryid']] ?></td>
                                         <td>
-                                            <button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button>
-                                            <button class=" btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>
+                                        <a href="<?= base_url('item/edit/' . $singleItem['id']) ?>"><button class=" btn btn-primary" style="margin-bottom: 3px;"><i class="notika-icon notika-edit"></i></button></a>
+                                            <button value="<?= $singleItem['id'] ?>" class="confirm_del_btn btn btn-danger" style="margin-bottom: 3px;"><i class="notika-icon notika-trash"></i></button>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -67,4 +90,25 @@
         </div>
     </div>
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('scripts') ?>
+<script>
+  $(document).ready(function() {
+    $('.confirm_del_btn').click(function(e) {
+      e.preventDefault();
+      var id = $(this).val();
+
+      if (confirm("Voulez-vous vraiment supprimer cette vidéo?")) {
+        $.ajax({
+          url: "<?= base_url('item/delete/') ?>" + id,
+          success: function(response) {
+              window.location.reload()
+              alert("Vidéo supprimée.")
+          }
+        });
+      }
+    });
+  });
+</script>
 <?= $this->endSection() ?>

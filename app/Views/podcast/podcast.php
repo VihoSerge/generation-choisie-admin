@@ -104,12 +104,12 @@
       e.preventDefault();
       var id = $(this).val();
 
-      if (confirm("Voulez vous vraiment supprimer ce podcast?")) {
+      if (confirm("Voulez-vous vraiment supprimer ce podcast?")) {
         $.ajax({
           url: "<?= base_url('podcast/delete/') ?>" + id,
           success: function(response) {
-            alert("Podcast supprimé.")
             window.location.reload()
+            alert("Podcast supprimé.")
           }
         });
       }

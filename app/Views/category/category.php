@@ -74,7 +74,7 @@
       e.preventDefault();
       var id = $(this).val();
 
-      if (confirm("Voulez vous vraiment supprimer ce programme?")) {
+      if (confirm("Voulez-vous vraiment supprimer ce programme?")) {
         $.ajax({
           url: "<?= base_url('category/delete/') ?>" + id,
           success: function(response) {
