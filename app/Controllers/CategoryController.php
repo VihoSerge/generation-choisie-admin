@@ -61,24 +61,24 @@ class CategoryController extends BaseController
         if (! $this->validate($validationRule)) {
             return redirect('category/create')->with('error', "Erreur lors de l'ajout de l'image. ");
         }
-        if (!is_dir('./assets/'))
-            mkdir('./assets/');
+        if (!is_dir('./assets/categories/'))
+            mkdir('./assets/categories/');
         $name = $this->request->getPost('name');
         $file = $this->request->getFile('file');
         $fname = $file->getRandomName();
         while (true) {
-            $check = $category->where("thumbnail_url", "assets/{$fname}")->countAllResults();
+            $check = $category->where("thumbnail_url", "assets/categories/{$fname}")->countAllResults();
             if ($check > 0) {
                 $fname = $file->getRandomName();
             } else {
                 break;
             }
         }
-        if ($file->move("assets/", $fname)) {
+        if ($file->move("assets/categories/", $fname)) {
 
             if ( $category->save([
                 "name" => $name,
-                "thumbnail_url" => "assets/" . $fname
+                "thumbnail_url" => "assets/categories/" . $fname
             ])) {
                 return redirect('category/create')->with('success', "Programme ajouté avec succes");
             } 
@@ -113,24 +113,25 @@ class CategoryController extends BaseController
         if (! $this->validate($validationRule)) {
             return redirect('category')->with('error', "Erreur lors de l'ajout de l'image. ");
         }
-        if (!is_dir('./assets/'))
-        mkdir('./assets/');
+        if (!is_dir('./assets/categories/'))
+        mkdir('./assets/categories/');
     $name = $this->request->getPost('name');
     $file = $this->request->getFile('file');
     $fname = $file->getRandomName();
     while (true) {
-        $check = $category->where("thumbnail_url", "assets/{$fname}")->countAllResults();
+        $check = $category->where("thumbnail_url", "assets/categories/{$fname}")->countAllResults();
         if ($check > 0) {
             $fname = $file->getRandomName();
         } else {
             break;
         }
     }
-    if ($file->move("assets/", $fname)) {
-      
+    if ($file->move("assets/categories/", $fname)) {
+        $fileToDelete = $category->find($id);
+        unlink($fileToDelete['url']);
         if (  $category->update($id,[
             "name" => $name,
-            "thumbnail_url" => "assets/" . $fname
+            "thumbnail_url" => "assets/categories/" . $fname
         ])) {
             return redirect('category')->with('success', "Programme modifié avec succes");
         } 
@@ -156,6 +157,8 @@ class CategoryController extends BaseController
     public function delete($id = null)
     {
         $category = new CategoryModel();
+        $fileToDelete = $category->find($id);
+        unlink($fileToDelete['thumbnail_url']);
         $category->delete($id);
         return;
     }

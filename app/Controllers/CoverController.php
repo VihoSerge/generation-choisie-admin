@@ -37,24 +37,24 @@ class CoverController extends BaseController
         if (! $this->validate($validationRule)) {
             return redirect('cover/create')->with('error', "Erreur lors de l'ajout de l'image. ");
         }
-        if (!is_dir('./assets/'))
-            mkdir('./assets/');
+        if (!is_dir('./assets/covers'))
+            mkdir('./assets/covers');
         $title = $this->request->getPost('name');
         $file = $this->request->getFile('file');
         $fname = $file->getRandomName();
         while (true) {
-            $check = $cover->where("url", "assets/{$fname}")->countAllResults();
+            $check = $cover->where("url", "assets/covers/{$fname}")->countAllResults();
             if ($check > 0) {
                 $fname = $file->getRandomName();
             } else {
                 break;
             }
         }
-        if ($file->move("assets/", $fname)) {
+        if ($file->move("assets/covers/", $fname)) {
 
             if ( $cover->save([
                 "title" => $title,
-                "url" => "assets/" . $fname
+                "url" => "assets/covers/" . $fname
             ])) {
                 return redirect('cover/create')->with('success', "Banniere ajouté avec succes");
             } 
@@ -89,24 +89,25 @@ class CoverController extends BaseController
         if (! $this->validate($validationRule)) {
             return redirect('/')->with('error', "Erreur lors de l'ajout de l'image. ");
         }
-        if (!is_dir('./assets/'))
-        mkdir('./assets/');
+        if (!is_dir('./assets/covers/'))
+        mkdir('./assets/covers/');
     $title = $this->request->getPost('name');
     $file = $this->request->getFile('file');
     $fname = $file->getRandomName();
     while (true) {
-        $check = $cover->where("url", "assets/{$fname}")->countAllResults();
+        $check = $cover->where("url", "assets/covers/{$fname}")->countAllResults();
         if ($check > 0) {
             $fname = $file->getRandomName();
         } else {
             break;
         }
     }
-    if ($file->move("assets/", $fname)) {
-      
+    if ($file->move("assets/covers/", $fname)) {
+        $fileToDelete = $cover->find($id);
+        unlink($fileToDelete['url']);
         if (  $cover->update($id,[
             "title" => $title,
-            "url" => "assets/" . $fname
+            "url" => "assets/covers/" . $fname
         ])) {
             return redirect('/')->with('success', "Banniere modifié avec succes");
         } 
@@ -132,6 +133,9 @@ class CoverController extends BaseController
     public function delete($id = null)
     {
         $cover = new CoverModel();
+
+        $fileToDelete = $cover->find($id);
+        unlink($fileToDelete['url']);
         $cover->delete($id);
         return;
     }
