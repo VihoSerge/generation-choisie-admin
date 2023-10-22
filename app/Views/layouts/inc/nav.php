@@ -1,4 +1,3 @@
-<!-- End Header Top Area -->
 <!-- Mobile Menu start -->
 <div class="mobile-menu-area">
     <div class="container">
@@ -7,13 +6,13 @@
                 <div class="mobile-menu">
                     <nav id="dropdown">
                         <ul class="mobile-menu-nav">
-                            <li><a data-toggle="collapse" data-target="<?= base_url() ?>" href="#">Bannieres</a>
+                            <li><a data-toggle="collapse" data-target="#cover"  href="<?= base_url('/') ?>" href="#">Bannieres</a>
                             </li>
-                            <li><a data-toggle="collapse" data-target="<?= base_url('podcast') ?>" href="#">Podcasts</a>
+                            <li><a data-toggle="collapse" data-target="#podcast"  href="<?= base_url('podcast') ?>" href="#">Podcasts</a>
                             </li>
-                            <li><a data-toggle="collapse" data-target="#democrou" href="<?= base_url('category') ?>">Programmes</a>
+                            <li><a data-toggle="collapse" data-target="#category" href="<?= base_url('category') ?>">Programmes</a>
                             </li>
-                            <li><a data-toggle="collapse" data-target="#demolibra" href="<?= base_url('item') ?>">Vidéos</a>
+                            <li><a data-toggle="collapse" data-target="#item" href="<?= base_url('item') ?>">Vidéos</a>
                             </li>
                         </ul>
                     </nav>
@@ -29,7 +28,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                    <li><a href="<?= base_url() ?>"> Bannieres</a>
+                    <li><a href="<?= base_url('/') ?>"> Bannieres</a>
                     </li>
                     <li><a href="<?= base_url('podcast') ?>"> Podcasts</a>
                     </li>
