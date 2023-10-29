@@ -198,6 +198,9 @@
     <!--  chosen JS
                 ============================================ -->
     <script src="<?= base_url('admin-template/js/chosen/chosen.jquery.js') ?>"></script>
+
+
+    <?= $this->renderSection('scripts') ?>
 </body>
 
 </html>

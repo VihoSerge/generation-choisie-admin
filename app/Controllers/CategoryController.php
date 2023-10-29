@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\CategoryModel;
+use App\Models\ItemModel;
 use CodeIgniter\API\ResponseTrait;
 
 class CategoryController extends BaseController
@@ -130,8 +131,13 @@ class CategoryController extends BaseController
     public function delete($id = null)
     {
         $category = new CategoryModel();
+        $item = new ItemModel();
         $fileToDelete = $category->find($id);
         unlink($fileToDelete['thumbnail_url']);
+        $data = $item->where('categoryid',$id)->findAll();
+        if ($data) {
+            return $this->respond(array("message" => "Impossible de supprimer. Il y' a au moins une vidéo reliée a ce programme."));
+        }
         $category->delete($id);
         return;
     }

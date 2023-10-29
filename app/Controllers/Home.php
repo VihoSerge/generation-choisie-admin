@@ -36,13 +36,13 @@ class Home extends BaseController
     {
         $item = new ItemModel();
         $category = new CategoryModel();
-        $categories = $category->findAll();
+        $categories =  $category->findAll();
         $array = array();
 
         foreach ($categories as $value){
             $array[$value['id']] = $value['name'];
         }
-        $data['item'] =  $item->findAll();
+        $data['item'] =  $item->findAll(); //$item->findAll();
         $data['category'] = $array;
         return view('item/item', $data);
     }

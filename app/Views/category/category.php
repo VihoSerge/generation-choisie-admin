@@ -78,8 +78,13 @@
         $.ajax({
           url: "<?= base_url('category/delete/') ?>" + id,
           success: function(response) {
+            if(response.message){
+                alert(response.message);
+            }
+            else{
             window.location.reload()
             alert("Programme supprimé.")
+            }
           }
         });
       }
