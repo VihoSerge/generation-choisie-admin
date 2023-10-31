@@ -56,10 +56,63 @@
               <td><?= (strlen($singleItem['url']) > 20 ? (substr($singleItem['url'], 0, 20) . "...") : ($singleItem['url']));  ?></td>
               <td><?= $category[$singleItem['categoryid']] ?></td>
               <td>
-                <a href="<?= base_url('item/edit/' . $singleItem['id']) ?>" class=" btn btn-primary"><i class="bi bi-pencil-square"></i></a>
+                <a type="button" data-bs-toggle="modal" data-bs-target="<?= '#itemModalUpdating' . $singleItem['id'] ?>" class=" btn btn-primary"><i class="bi bi-pencil-square"></i></a>
                 <a class="confirm_del_btn btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="<?= '#itemModalDeleting' . $singleItem['id'] ?>"><i class="bi bi-trash-fill"></i></a>
               </td>
             </tr>
+
+            <!-- Modal updating -->
+            <div class="modal fade" id="<?= 'itemModalUpdating' . $singleItem['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Modifier une vidéo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="<?= base_url('item/update/' . $singleItem['id'])  ?>" method="post">
+                      <input type="hidden" name="_method" value="PUT" />
+                      <div class="mb-3">
+                        <label for="name" class="form-label">Libellé:</label>
+                        <input value="<?= $singleItem['name'] ?>" type="text" id="name" name="name" class="form-control" placeholder="Nom de la vidéo" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="lien" class="form-label">Lien:</label>
+                        <input value="<?= $singleItem['url'] ?>" type="text" id="lien" name="url" class="form-control" placeholder="Lien de la vidéo" required>
+                      </div>
+                      <div class="mb-3 input-group">
+                        <span class="input-group-text">
+                          Programme
+                        </span>
+                        <select class="form-select" id="subject" name="programme">
+                          <?php foreach ($categories as $categoryItem) : ?>
+                            <?php if ($categoryItem['id'] == $singleItem['categoryid']) { ?>
+                              <option value="<?= $categoryItem['id'] ?>" selected><?= $categoryItem['name'] ?></option>
+                            <?php } else { ?>
+                              <option value="<?= $categoryItem['id'] ?>"><?= $categoryItem['name'] ?></option>
+                            <?php  } ?>
+                          <?php endforeach; ?>
+
+
+                        </select>
+                      </div>
+
+                      <div class="mb-3 form-floating">
+                        <textarea class="form-control" name="description" id="query" style="height: 140px" placeholder="query"><?= $singleItem['url'] ?></textarea>
+                        <label for="query">Description de la vidéo...</label>
+                      </div>
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Modifier</button>
+                      </div>
+
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
             <!-- Modal for deleting -->

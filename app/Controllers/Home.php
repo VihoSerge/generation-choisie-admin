@@ -35,7 +35,7 @@ class Home extends BaseController
         return view('category/category', $data);
     }
 
-    public function item()
+    public function item($id = null)
     {
 
         $item = new ItemModel();
@@ -47,7 +47,15 @@ class Home extends BaseController
             $array[$value['id']] = $value['name'];
         }
         $data['item'] =  $item->findAll();
-        $data['category'] = $array;
-        return view('item/item', $data);
+
+        if ($id != null) {
+            $data['singleItem'] = $item->find($id);
+            $data['category'] = $array;
+            return view('item/item', $data);
+        } else {
+            $data['singleItem'] = array("categoryid" => 0);
+            $data['category'] = $array;
+            return view('item/item', $data);
+        }
     }
 }

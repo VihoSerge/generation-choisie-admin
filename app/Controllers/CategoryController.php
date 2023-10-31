@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\CategoryModel;
+use App\Models\ItemModel;
 use CodeIgniter\API\ResponseTrait;
 
 class CategoryController extends BaseController
@@ -115,12 +116,17 @@ class CategoryController extends BaseController
     public function delete($id = null)
     {
         $category = new CategoryModel();
+        $item = new ItemModel();
         $fileToDelete = $category->find($id);
-        if ($category->delete($id)) {
-            unlink($fileToDelete['thumbnail_url']);
-            return redirect('category')->with('success', "Programme supprimé avec succès");
-        } else {
-            return redirect('category')->with('error', "Une erreur s'est produite.");
+        $data = $item->where('categoryid', $id)->findAll();
+        if (!$data) {
+            if ($category->delete($id)) {
+                unlink($fileToDelete['thumbnail_url']);
+                return redirect('category')->with('success', "Programme supprimé avec succès");
+            } else {
+                return redirect('category')->with('error', "Une erreur s'est produite.");
+            }
         }
+        return redirect('category')->with('error', "Impossible de supprimer. Il y' a au moins une vidéo reliée à ce programme.");
     }
 }
