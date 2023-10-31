@@ -13,6 +13,9 @@ class Home extends BaseController
     {
         $cover = new CoverModel();
         $data['covers'] =  $cover->findAll();
+        $data['updateCover'] = array(
+            'title' => ""
+        );
         return view('cover/cover', $data);
     }
 
@@ -34,12 +37,13 @@ class Home extends BaseController
 
     public function item()
     {
+
         $item = new ItemModel();
         $category = new CategoryModel();
-        $categories = $category->findAll();
+        $data['categories'] = $category->findAll();
         $array = array();
 
-        foreach ($categories as $value) {
+        foreach ($data['categories'] as $value) {
             $array[$value['id']] = $value['name'];
         }
         $data['item'] =  $item->findAll();

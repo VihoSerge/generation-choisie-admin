@@ -18,10 +18,6 @@ class CoverController extends BaseController
         return $this->respond($data, 200);
     }
 
-    public function create()
-    {
-        return view('cover/create');
-    }
 
     public function add()
     {
@@ -57,20 +53,12 @@ class CoverController extends BaseController
                 "title" => $title,
                 "url" => "assets/covers/" . $fname
             ])) {
-                return redirect('/')->with('success', "Banniere ajouté avec succes");
+                return redirect('/')->with('success', "Bannière ajoutée avec succès");
             }
         } else {
             return redirect('/')->with('error', "Une erreur s'est produite.");
         }
         return;
-    }
-
-    public function edit($id = null)
-    {
-        $cover = new CoverModel();
-
-        $data['cover'] = $cover->find($id);
-        return view('cover/edit', $data);
     }
 
     public function update($id = null)
@@ -109,7 +97,7 @@ class CoverController extends BaseController
                     "title" => $title,
                     "url" => "assets/covers/" . $fname
                 ])) {
-                    return redirect('/')->with('success', "Banniere modifié avec succes");
+                    return redirect('/')->with('success', "Bannière modifiée avec succès");
                 }
             } else {
                 return redirect('/')->with('error', "Une erreur s'est produite.");
@@ -119,7 +107,7 @@ class CoverController extends BaseController
             if ($cover->update($id, [
                 "title" => $title
             ])) {
-                return redirect('/')->with('success', "Banniere modifié avec succes");
+                return redirect('/')->with('success', "Bannière modifiée avec succès");
             } else {
                 return redirect('/')->with('error', "Une erreur s'est produite.");
             }
@@ -131,10 +119,12 @@ class CoverController extends BaseController
     public function delete($id = null)
     {
         $cover = new CoverModel();
-
         $fileToDelete = $cover->find($id);
-        unlink($fileToDelete['url']);
-        $cover->delete($id);
-        return;
+        if ($cover->delete($id)) {
+            unlink($fileToDelete['url']);
+            return redirect('/')->with('success', "Bannière supprimée avec succès");
+        } else {
+            return redirect('/')->with('error', "Une erreur s'est produite.");
+        }
     }
 }

@@ -4,7 +4,7 @@
     <div class="col-6">
       <nav class="navbar  align-items-center">
         <a class="navbar-brand" href="#">
-          <img src="<?= base_url('admin-template/img/logo/logo.png') ?>" alt="Génération Choisi Logo" style="height: 3rem;" />
+          <img src="<?= base_url('assets/logo/logo.png') ?>" alt="Génération Choisi Logo" style="height: 3rem;" />
           <span class="text-white fw-bold d-none d-md-inline">Génération Choisie</span>
         </a>
       </nav>

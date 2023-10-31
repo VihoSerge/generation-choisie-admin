@@ -59,6 +59,32 @@
       color: #273c8f;
     }
 
+    input:focus-visible {
+      outline: none;
+      border-color: #273c8f;
+    }
+
+    .form-control,
+    .form-select {
+      outline: none !important;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: #273c8f;
+      border-width: 0.12rem;
+      box-shadow: none;
+    }
+
+    /* option{
+      color: #fff;
+    } */
+
+    option:hover {
+      color: #fff;
+      background: #273c8f;
+    }
+
     .active {
       color: #273c8f !important;
     }
@@ -99,22 +125,8 @@
   <script src="<?= base_url('bootstrap/js/jquery.dataTables.min.js') ?>"></script>
   <script src="<?= base_url('bootstrap/js/dataTables.bootstrap5.min.js') ?>"></script>
 
-  <script>
-    new DataTable('#example');
+  <script src="<?= base_url('bootstrap/js/script.js') ?>">
 
-    const navLinkEls = document.querySelectorAll('.nav-link');
-    const windowPathName = window.location.pathname;
-
-    console.log(windowPathName);
-
-
-    navLinkEls.forEach(navLinkEl => {
-      const navLinPathName = new URL(navLinkEl.href).pathname;
-
-      if (windowPathName === navLinPathName) {
-        navLinkEl.classList.add('active');
-      }
-    })
   </script>
 </body>
 
