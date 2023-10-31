@@ -2,41 +2,139 @@
 
 namespace App\Controllers;
 
-//use App\Models\CoverModel;
+use App\Models\CoverModel;
 use CodeIgniter\API\ResponseTrait;
 
 class CoverController extends BaseController
 {
     use ResponseTrait;
 
-    protected $covers = [
-        [
-            'id' => 1,
-            'title' => 'Cover1',
-            'url' => 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2h1cmNofGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-        ],
-        [
-            'id' => 2,
-            'title' => 'Cover2',
-            'url' => 'https://images.unsplash.com/photo-1472905981516-5ac09f35b7f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNodXJjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
-        ],
-        [
-            'id' => 3,
-            'title' => 'Cover3',
-            'url' => 'https://images.unsplash.com/photo-1507692049790-de58290a4334?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNodXJjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
-        ],
-        [
-            'id' => 4,
-            'title' => 'Cover4',
-            'url' => 'https://images.unsplash.com/photo-1499652848871-1527a310b13a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNodXJjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
-        ],
-    ];
+    protected $helpers = ['form'];
 
     public function index()
     {
-        // $cover = new CoverModel();
-        $data = $this->covers;
-
+        $cover = new CoverModel();
+        $data = $cover->findAll();
         return $this->respond($data, 200);
+    }
+
+    public function create()
+    {
+        return view('cover/create');
+    }
+
+    public function add()
+    {
+        $cover = new CoverModel();
+        $validationRule = [
+            'file' => [
+                'rules' => [
+                    'uploaded[file]',
+                    'is_image[file]',
+                    'mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                ],
+            ],
+        ];
+        if (!$this->validate($validationRule)) {
+            return redirect('/')->with('error', "Erreur lors de l'ajout de l'image. ");
+        }
+        if (!is_dir('./assets/covers'))
+            mkdir('./assets/covers');
+        $title = $this->request->getPost('name');
+        $file = $this->request->getFile('file');
+        $fname = $file->getRandomName();
+        while (true) {
+            $check = $cover->where("url", "assets/covers/{$fname}")->countAllResults();
+            if ($check > 0) {
+                $fname = $file->getRandomName();
+            } else {
+                break;
+            }
+        }
+        if ($file->move("assets/covers/", $fname)) {
+
+            if ($cover->save([
+                "title" => $title,
+                "url" => "assets/covers/" . $fname
+            ])) {
+                return redirect('/')->with('success', "Banniere ajouté avec succes");
+            }
+        } else {
+            return redirect('/')->with('error', "Une erreur s'est produite.");
+        }
+        return;
+    }
+
+    public function edit($id = null)
+    {
+        $cover = new CoverModel();
+
+        $data['cover'] = $cover->find($id);
+        return view('cover/edit', $data);
+    }
+
+    public function update($id = null)
+    {
+        $cover = new CoverModel();
+        if ($_FILES['file']['name']) {
+            $validationRule = [
+                'file' => [
+                    'rules' => [
+                        'uploaded[file]',
+                        'is_image[file]',
+                        'mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                    ],
+                ],
+            ];
+            if (!$this->validate($validationRule)) {
+                return redirect('/')->with('error', "Erreur lors de l'ajout de l'image. ");
+            }
+            if (!is_dir('./assets/covers/'))
+                mkdir('./assets/covers/');
+            $title = $this->request->getPost('name');
+            $file = $this->request->getFile('file');
+            $fname = $file->getRandomName();
+            while (true) {
+                $check = $cover->where("url", "assets/covers/{$fname}")->countAllResults();
+                if ($check > 0) {
+                    $fname = $file->getRandomName();
+                } else {
+                    break;
+                }
+            }
+            if ($file->move("assets/covers/", $fname)) {
+                $fileToDelete = $cover->find($id);
+                unlink($fileToDelete['url']);
+                if ($cover->update($id, [
+                    "title" => $title,
+                    "url" => "assets/covers/" . $fname
+                ])) {
+                    return redirect('/')->with('success', "Banniere modifié avec succes");
+                }
+            } else {
+                return redirect('/')->with('error', "Une erreur s'est produite.");
+            }
+        } else {
+            $title = $this->request->getPost('name');
+            if ($cover->update($id, [
+                "title" => $title
+            ])) {
+                return redirect('/')->with('success', "Banniere modifié avec succes");
+            } else {
+                return redirect('/')->with('error', "Une erreur s'est produite.");
+            }
+        }
+
+        return;
+    }
+
+    public function delete($id = null)
+    {
+        $cover = new CoverModel();
+
+        $fileToDelete = $cover->find($id);
+        unlink($fileToDelete['url']);
+        $cover->delete($id);
+        return;
     }
 }

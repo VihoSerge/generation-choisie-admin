@@ -1,0 +1,206 @@
+CRITICAL - 2023-10-30 14:05:24 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(16): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:05:25 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(16): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:06:53 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(16): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:06:55 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(16): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:06:55 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(16): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:06:56 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(16): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:06:56 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(16): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:06:56 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(16): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:06:56 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(16): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:07:58 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(14): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:08:18 --> Invalid file: "/app/Views/cover/cover.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/app/Views/cover/cover.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/app/Views/cover/cover.php', [], true)
+ 3 APPPATH\Controllers\Home.php(14): view('/app/Views/cover/cover.php')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:08:19 --> Invalid file: "/app/Views/cover/cover.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/app/Views/cover/cover.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/app/Views/cover/cover.php', [], true)
+ 3 APPPATH\Controllers\Home.php(14): view('/app/Views/cover/cover.php')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:08:20 --> Invalid file: "/app/Views/cover/cover.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/app/Views/cover/cover.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/app/Views/cover/cover.php', [], true)
+ 3 APPPATH\Controllers\Home.php(14): view('/app/Views/cover/cover.php')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:08:20 --> Invalid file: "/app/Views/cover/cover.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/app/Views/cover/cover.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/app/Views/cover/cover.php', [], true)
+ 3 APPPATH\Controllers\Home.php(14): view('/app/Views/cover/cover.php')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:08:20 --> Invalid file: "/app/Views/cover/cover.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/app/Views/cover/cover.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/app/Views/cover/cover.php', [], true)
+ 3 APPPATH\Controllers\Home.php(14): view('/app/Views/cover/cover.php')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:08:21 --> Invalid file: "/app/Views/cover/cover.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/app/Views/cover/cover.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/app/Views/cover/cover.php', [], true)
+ 3 APPPATH\Controllers\Home.php(14): view('/app/Views/cover/cover.php')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:10:15 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(14): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:10:51 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(14): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 14:10:52 --> Invalid file: "/layouts/frontend.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/layouts/frontend.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('/layouts/frontend.php', [], true)
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('cover/cover', [], true)
+ 4 APPPATH\Controllers\Home.php(14): view('cover/cover')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 23:50:59 --> Undefined variable $cover
+in APPPATH\Views\podcast\podcast.php on line 42.
+ 1 APPPATH\Views\podcast\podcast.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cover', 'C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\podcast\\podcast.php', 42)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\podcast\\podcast.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('podcast/podcast', [], true)
+ 5 APPPATH\Controllers\Home.php(25): view('podcast/podcast', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->podcast()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 23:51:05 --> Undefined variable $cover
+in APPPATH\Views\podcast\podcast.php on line 42.
+ 1 APPPATH\Views\podcast\podcast.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cover', 'C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\podcast\\podcast.php', 42)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\generation-choisie-admin\\app\\Views\\podcast\\podcast.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('podcast/podcast', [], true)
+ 5 APPPATH\Controllers\Home.php(25): view('podcast/podcast', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->podcast()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
