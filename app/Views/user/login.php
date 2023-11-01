@@ -76,12 +76,12 @@
           ?>
           <form action="<?= base_url('user/login') ?>" method="post">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <label for="exampleInputEmail1" class="form-label">Email</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
 
             </div>
             <div class=" mb-5">
-              <label for="password-input" class="form-label">Password</label>
+              <label for="password-input" class="form-label">Mot de passe</label>
               <div class="input-group">
                 <input type="password" class="form-control" id="password-input" name="password">
                 <span role="button" class="input-group-text " id="basic-addon2"><i class="password-show bi bi-eye-fill text-primary  pointer-event"></i></span>
