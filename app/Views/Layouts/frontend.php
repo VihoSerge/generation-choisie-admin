@@ -7,7 +7,7 @@
   <title>Génération Choisi - Admin</title>
   <!-- favicon
 		============================================ -->
-  <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('admin-template/img/logo/logo.png') ?>">
+  <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/logo/logo.png') ?>">
 
   <!-- Google fonts ============================================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,8 +49,9 @@
       position: relative;
     }
 
-    .bg-primary {
-      background: #273c8f;
+    .bg-primary,
+    .btn-primary {
+      background: #273c8f !important;
     }
 
     .nav-link:hover,
@@ -75,10 +76,6 @@
       border-width: 0.12rem;
       box-shadow: none;
     }
-
-    /* option{
-      color: #fff;
-    } */
 
     option:hover {
       color: #fff;

@@ -28,6 +28,12 @@ $routes->get('category/delete/(:num)', 'CategoryController::delete/$1');
 $routes->post('podcast/add', 'PodcastController::add');
 $routes->put('podcast/update/(:num)', 'PodcastController::update/$1');
 $routes->get('podcast/delete/(:num)', 'PodcastController::delete/$1');
+//Users routes
+$routes->get('user/login', 'UserController::index');
+$routes->post('user/register', 'UserController::add');
+$routes->put('user/update/(:num)', 'UserController::update/$1');
+$routes->get('user/delete/(:num)', 'UserController::delete/$1');
+
 
 
 

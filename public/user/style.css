@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+  --main-color: #273c8f;
+  --lighter-color: 120%;
+}
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  background: var(--main-color) !important;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  min-width: 310px;
+}
+
+.login {
+  padding: 0;
+  width: 90%;
+  max-width: 400px;
+  min-width: 306px;
+}
+
+.login-top {
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  padding: 1rem;
+  border-radius: 0.2rem 0.2rem 0 0;
+}
+
+.login-top__title {
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.login-form {
+  border: rgba(0, 0, 0, 0.1) solid 0.1rem;
+  padding: 1rem;
+  border-radius: 0 0 0.2rem 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0.7rem 01rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.login-form form {
+  width: 100%;
+}
+
+.login-form__input {
+  display: flex;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.login-form__input-icon {
+  background-color: var(--main-color);
+  padding: 0.5rem;
+  height: 2.3rem;
+  width: 10%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.login-form__input-icon__item {
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 1rem;
+}
+
+.login-form__input input {
+  height: 2.3rem;
+  width: 90%;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  border-radius: 0 0.3rem 0.3rem 0;
+  font-family: inherit;
+  z-index: 1;
+}
+
+.login-form__input input[type='password'] {
+  padding-right: 2rem;
+}
+.login-form__input input::placeholder {
+  font-size: 0.8rem;
+  color: #d3cfcf;
+  font-family: inherit;
+}
+
+.login-form__input input:focus,
+.login-form__input input:focus-visible {
+  border: 0.1rem solid var(--main-color);
+  outline: none;
+  border-left: none;
+}
+
+.show-password {
+  position: absolute;
+  top: 30%;
+  left: 85%;
+  text-align: center;
+  z-index: 10;
+  cursor: pointer;
+  color: var(--main-color);
+  width: 10%;
+  margin-left: 1rem;
+}
+.forget-password__message,
+.not-member-question a {
+  font-size: 0.8rem;
+  color: var(--main-color);
+  margin-bottom: 0.7rem;
+}
+.forget-password__message:hover,
+.not-member-question a:hover {
+  filter: brightness(var(--lighter-color));
+  cursor: pointer;
+}
+.login-button {
+  width: 100%;
+  padding: 0.3rem;
+  background: var(--main-color);
+  border: 0.3rem solid var(--main-color);
+  border-radius: 0.3rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.7rem;
+}
+.login-button:hover {
+  filter: brightness(var(--lighter-color));
+  cursor: pointer;
+}
+.not-member-question {
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
