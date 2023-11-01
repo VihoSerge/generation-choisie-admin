@@ -9,6 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 //Home routes
 $routes->get('/', 'Home::index');
 $routes->get('/podcast', 'Home::podcast');
+$routes->get('/person', 'Home::user');
 $routes->get('/item', 'Home::item');
 $routes->get('/category', 'Home::category');
 
@@ -29,8 +30,9 @@ $routes->post('podcast/add', 'PodcastController::add');
 $routes->put('podcast/update/(:num)', 'PodcastController::update/$1');
 $routes->get('podcast/delete/(:num)', 'PodcastController::delete/$1');
 //Users routes
-$routes->get('user/login', 'UserController::index');
-$routes->post('user/register', 'UserController::add');
+$routes->get('user/loginPage', 'UserController::index');
+$routes->post('user/login', 'UserController::login');
+$routes->post('user/add', 'UserController::add');
 $routes->put('user/update/(:num)', 'UserController::update/$1');
 $routes->get('user/delete/(:num)', 'UserController::delete/$1');
 

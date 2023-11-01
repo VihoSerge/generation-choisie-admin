@@ -50,9 +50,18 @@
     }
 
     .bg-primary,
-    .btn-primary {
+    .btn-primary,
+    .page-link.active,
+    .active>.page-link {
       background: #273c8f !important;
     }
+
+    .page-link.active,
+    .active>.page-link,
+    .btn-primary {
+      border-color: #273c8f !important;
+    }
+
 
     .nav-link:hover,
     .nav-link:active {
@@ -121,10 +130,7 @@
   <script src="<?= base_url('bootstrap/js/jqueryDatatable.js') ?>"></script>
   <script src="<?= base_url('bootstrap/js/jquery.dataTables.min.js') ?>"></script>
   <script src="<?= base_url('bootstrap/js/dataTables.bootstrap5.min.js') ?>"></script>
-
-  <script src="<?= base_url('bootstrap/js/script.js') ?>">
-
-  </script>
+  <script src="<?= base_url('bootstrap/js/script.js') ?>"></script>
 </body>
 
 

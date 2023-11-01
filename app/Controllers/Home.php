@@ -6,6 +6,7 @@ use App\Models\CategoryModel;
 use App\Models\CoverModel;
 use App\Models\ItemModel;
 use App\Models\PodcastModel;
+use App\Models\UserModel;
 
 class Home extends BaseController
 {
@@ -24,7 +25,6 @@ class Home extends BaseController
         $podcast = new PodcastModel();
 
         $data['podcast'] = $podcast->findAll();
-        //return $this->respond($data);
         return view('podcast/podcast', $data);
     }
 
@@ -57,5 +57,12 @@ class Home extends BaseController
             $data['category'] = $array;
             return view('item/item', $data);
         }
+    }
+
+    public function user()
+    {
+        $user = new UserModel();
+        $data['user'] = $user->findAll();
+        return view('user/user', $data);
     }
 }

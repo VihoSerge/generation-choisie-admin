@@ -10,10 +10,7 @@ navLinkEls.forEach((navLinkEl) => {
   }
 });
 
-const updateBtns = document.querySelectorAll('.confirm_update_btn');
-
-updateBtns.forEach((updateBtn) => {
-  updateBtn.addEventListener('clicked', () => {
-    console.log(`clicked : ${updateBtn.value}`);
-  });
-});
+const tooltipTriggerList = document.querySelectorAll('.tt');
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);

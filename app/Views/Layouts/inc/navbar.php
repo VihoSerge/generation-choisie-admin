@@ -15,9 +15,12 @@
         <li class="nav-item">
           <a class="nav-link pb-0" href="<?= base_url('item') ?>">Vidéos</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link pb-0" href="#">Utilisateurs</a>
-        </li> -->
+        <li class="nav-item">
+          <a class="nav-link pb-0" href="<?= base_url('person') ?>">Utilisateurs</a>
+        </li>
+        <li class="nav-item d-md-none">
+          <a class="nav-link pb-0" href="<?= base_url('user/loginPage') ?>">Déconnexion</a>
+        </li>
       </ul>
     </div>
   </div>
