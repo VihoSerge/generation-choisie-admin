@@ -20,7 +20,7 @@
 
     <div class=" d-none d-md-inline-block col-6 text-end">
       <span class="tt" data-bs-placement="left" title="Déconnexion">
-        <a href="<?= base_url('user/loginPage') ?>"><i class="bi bi-box-arrow-right text-white pe-4 fw-bold fs-3"></i></a>
+        <a href="<?= base_url('user/logout') ?>"><i class="bi bi-box-arrow-right text-white pe-4 fw-bold fs-3"></i></a>
       </span>
 
       </nav>

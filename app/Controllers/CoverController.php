@@ -21,6 +21,9 @@ class CoverController extends BaseController
 
     public function add()
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $cover = new CoverModel();
         $validationRule = [
             'file' => [
@@ -63,6 +66,9 @@ class CoverController extends BaseController
 
     public function update($id = null)
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $cover = new CoverModel();
         if ($_FILES['file']['name']) {
             $validationRule = [
@@ -118,6 +124,9 @@ class CoverController extends BaseController
 
     public function delete($id = null)
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $cover = new CoverModel();
         $fileToDelete = $cover->find($id);
         if ($cover->delete($id)) {

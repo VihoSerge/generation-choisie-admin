@@ -12,6 +12,9 @@ class Home extends BaseController
 {
     public function index()
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $cover = new CoverModel();
         $data['covers'] =  $cover->findAll();
         $data['updateCover'] = array(
@@ -22,6 +25,10 @@ class Home extends BaseController
 
     public function podcast()
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
+
         $podcast = new PodcastModel();
 
         $data['podcast'] = $podcast->findAll();
@@ -30,6 +37,10 @@ class Home extends BaseController
 
     public function category()
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
+
         $category = new CategoryModel();
         $data['category'] =  $category->findAll();
         return view('category/category', $data);
@@ -37,7 +48,9 @@ class Home extends BaseController
 
     public function item($id = null)
     {
-
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $item = new ItemModel();
         $category = new CategoryModel();
         $data['categories'] = $category->findAll();
@@ -61,6 +74,9 @@ class Home extends BaseController
 
     public function user()
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $user = new UserModel();
         $data['user'] = $user->findAll();
         return view('user/user', $data);

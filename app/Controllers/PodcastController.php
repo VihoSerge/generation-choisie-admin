@@ -18,6 +18,9 @@ class PodcastController extends BaseController
 
     public function add()
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         if ($this->request->getPost('name') == null || $this->request->getPost('url') == null) {
             return redirect('podcast')->with('error', "Veullez saisir au moins le nom et l'URL");
         }
@@ -37,6 +40,9 @@ class PodcastController extends BaseController
 
     public function update($id = null)
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         if ($this->request->getPost('name') && $this->request->getPost('url')) {
             $podcast = new PodcastModel();
             $data = [
@@ -57,6 +63,9 @@ class PodcastController extends BaseController
 
     public function delete($id = null)
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $podcast = new PodcastModel();
 
         if ($podcast->delete($id)) {

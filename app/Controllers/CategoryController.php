@@ -18,6 +18,9 @@ class CategoryController extends BaseController
 
     public function add()
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $category = new CategoryModel();
         $validationRule = [
             'file' => [
@@ -60,6 +63,9 @@ class CategoryController extends BaseController
 
     public function update($id = null)
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $category = new CategoryModel();
         if ($_FILES['file']['name']) {
             $validationRule = [
@@ -115,6 +121,9 @@ class CategoryController extends BaseController
 
     public function delete($id = null)
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $category = new CategoryModel();
         $item = new ItemModel();
         $fileToDelete = $category->find($id);

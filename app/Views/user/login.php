@@ -52,6 +52,35 @@
       height: 100%;
       width: 100%;
     }
+
+    input:focus-visible {
+      outline: none;
+      border-color: #273c8f;
+    }
+
+    .form-control,
+    .form-select {
+      outline: none !important;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: #273c8f;
+      border-width: 0.12rem;
+      box-shadow: none;
+    }
+
+    option:hover {
+      color: #fff;
+      background: #273c8f;
+
+    }
+
+    .page-link.active,
+    .active>.page-link,
+    .btn-primary {
+      border-color: #273c8f !important;
+    }
   </style>
 </head>
 

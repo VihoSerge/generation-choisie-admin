@@ -98,7 +98,7 @@
                       </div>
 
                       <div class="mb-3 form-floating">
-                        <textarea class="form-control" name="description" id="query" style="height: 140px" placeholder="query"><?= $singleItem['url'] ?></textarea>
+                        <textarea class="form-control" name="description" id="query" style="height: 140px" placeholder="query"><?= $singleItem['description'] ?></textarea>
                         <label for="query">Description de la vidéo...</label>
                       </div>
                       <div class="text-center">

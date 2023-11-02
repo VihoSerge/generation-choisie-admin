@@ -8,17 +8,11 @@ use CodeIgniter\API\ResponseTrait;
 class UserController extends BaseController
 {
 
-  private $DEFAULT_PASSWORD = "HelloW@rldFrom@nother#Planet1234IntheUniversPFFGE@#%%^";
-
   public function index()
   {
     return view('user/login');
   }
 
-
-
-
-  // use ResponseTrait;
   public function login()
   {
     $email = $this->request->getVar('email');
@@ -29,6 +23,7 @@ class UserController extends BaseController
 
     if ($data) {
       if (password_verify($password, $data[0]['password'])) {
+        $this->session->set('login', 'logged');
         return redirect('/')->with('success', "Connexion réussie. Bienvenue, " . $data[0]['name']);
       } else {
         return redirect('user/loginPage')->with('error', "Email ou mot de passe incorrect.");
@@ -38,9 +33,18 @@ class UserController extends BaseController
     }
   }
 
+  public function logout()
+  {
+    session_destroy();
+    return redirect('user/loginPage');
+  }
+
 
   public function add()
   {
+    if ($this->session->get('login') != 'logged') {
+      return redirect('user/loginPage');
+    }
     $user = new UserModel();
 
     if ($this->request->getPost('name') == null || $this->request->getPost('email') == null || $this->request->getPost('password') == null) {
@@ -70,6 +74,9 @@ class UserController extends BaseController
 
   public function update($id = null)
   {
+    if ($this->session->get('login') != 'logged') {
+      return redirect('user/loginPage');
+    }
     $user = new UserModel();
     $email = $this->request->getVar('email');
     $data = $user->where('email', $email)->findAll();
@@ -107,6 +114,9 @@ class UserController extends BaseController
 
   public function delete($id = null)
   {
+    if ($this->session->get('login') != 'logged') {
+      return redirect('user/loginPage');
+    }
     $user = new UserModel();
 
     if ($user->delete($id)) {

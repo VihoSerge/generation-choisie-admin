@@ -20,6 +20,9 @@ class ItemController extends BaseController
 
     public function add()
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         if ($this->request->getPost('name') == null || $this->request->getPost('url') == null) {
             return redirect('item')->with('error', "Veuillez saisir au moins le nom et l'URL");
         }
@@ -40,6 +43,9 @@ class ItemController extends BaseController
 
     public function update($id = null)
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         if ($this->request->getPost('name') && $this->request->getPost('url')) {
             $item = new ItemModel();
             $data = [
@@ -61,6 +67,9 @@ class ItemController extends BaseController
 
     public function delete($id = null)
     {
+        if ($this->session->get('login') != 'logged') {
+            return redirect('user/loginPage');
+        }
         $item = new ItemModel();
         if ($item->delete($id)) {
             return redirect('item')->with('success', "Vidéo supprimée avec succès");

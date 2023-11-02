@@ -31,6 +31,7 @@ $routes->put('podcast/update/(:num)', 'PodcastController::update/$1');
 $routes->get('podcast/delete/(:num)', 'PodcastController::delete/$1');
 //Users routes
 $routes->get('user/loginPage', 'UserController::index');
+$routes->get('user/logout', 'UserController::logout');
 $routes->post('user/login', 'UserController::login');
 $routes->post('user/add', 'UserController::add');
 $routes->put('user/update/(:num)', 'UserController::update/$1');

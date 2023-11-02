@@ -33,12 +33,6 @@
 
 
   <style>
-    * {
-      /* margin: 0;
-      padding: 0 !important;
-      box-sizing: border-box; */
-    }
-
     html,
     body {
       font-family: 'Josefin Sans', sans-serif;

@@ -19,7 +19,7 @@
           <a class="nav-link pb-0" href="<?= base_url('person') ?>">Utilisateurs</a>
         </li>
         <li class="nav-item d-md-none">
-          <a class="nav-link pb-0" href="<?= base_url('user/loginPage') ?>">Déconnexion</a>
+          <a class="nav-link pb-0" href="<?= base_url('user/logout') ?>">Déconnexion</a>
         </li>
       </ul>
     </div>
