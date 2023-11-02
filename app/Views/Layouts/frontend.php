@@ -56,6 +56,9 @@
       border-color: #273c8f !important;
     }
 
+    .my-td_align {
+      vertical-align: middle;
+    }
 
     .nav-link:hover,
     .nav-link:active {

@@ -50,16 +50,16 @@
           <?php $i = 0;
           foreach ($podcast as $podcastItem) : ?>
             <tr>
-              <td><?= ++$i ?></td>
-              <td><?= $podcastItem['name'] ?></td>
-              <td><?= (strlen($podcastItem['url']) > 20 ? (substr($podcastItem['url'], 0, 20) . "...") : ($podcastItem['url']));  ?></td>
+              <td class="my-td_align"><?= ++$i ?></td>
+              <td class="my-td_align"><?= $podcastItem['name'] ?></td>
+              <td class="my-td_align"><?= (strlen($podcastItem['url']) > 20 ? (substr($podcastItem['url'], 0, 20) . "...") : ($podcastItem['url']));  ?></td>
               <?php if ($podcastItem['description']) { ?>
-                <td><?php echo (strlen($podcastItem['description']) > 20 ? (substr($podcastItem['description'], 0, 20) . "...") : ($podcastItem['description']));
-                    ?></td>
+                <td class="my-td_align"><?php echo (strlen($podcastItem['description']) > 20 ? (substr($podcastItem['description'], 0, 20) . "...") : ($podcastItem['description']));
+                                        ?></td>
               <?php } else { ?>
-                <td>Aucune description</td>
+                <td class="my-td_align">Aucune description</td>
               <?php } ?>
-              <td>
+              <td class="my-td_align">
                 <a type="button" data-bs-toggle="modal" data-bs-target="<?= '#podcastModalUpdating' . $podcastItem['id'] ?>" class=" btn btn-primary"><i class="bi bi-pencil-square"></i></a>
                 <a class="confirm_del_btn btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="<?= '#podcastModalDeleting' . $podcastItem['id'] ?>"><i class="bi bi-trash-fill"></i></a>
               </td>

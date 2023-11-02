@@ -51,11 +51,11 @@
           <?php $i = 0;
           foreach ($item as $singleItem) : ?>
             <tr>
-              <td><?= ++$i ?></td>
-              <td><?= $singleItem['name'] ?></td>
-              <td><?= (strlen($singleItem['url']) > 20 ? (substr($singleItem['url'], 0, 20) . "...") : ($singleItem['url']));  ?></td>
-              <td><?= $category[$singleItem['categoryid']] ?></td>
-              <td>
+              <td class="my-td_align"><?= ++$i ?></td>
+              <td class="my-td_align"><?= $singleItem['name'] ?></td>
+              <td class="my-td_align"><?= (strlen($singleItem['url']) > 20 ? (substr($singleItem['url'], 0, 20) . "...") : ($singleItem['url']));  ?></td>
+              <td class="my-td_align"><?= $category[$singleItem['categoryid']] ?></td>
+              <td class="my-td_align">
                 <a type="button" data-bs-toggle="modal" data-bs-target="<?= '#itemModalUpdating' . $singleItem['id'] ?>" class=" btn btn-primary"><i class="bi bi-pencil-square"></i></a>
                 <a class="confirm_del_btn btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="<?= '#itemModalDeleting' . $singleItem['id'] ?>"><i class="bi bi-trash-fill"></i></a>
               </td>

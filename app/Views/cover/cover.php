@@ -84,10 +84,10 @@
             </div>
             <!-- End Modal for updating -->
             <tr>
-              <td><?= ++$i ?></td>
-              <td><?= $cover['title'] ?></td>
-              <td><img src="<?= base_url($cover['url']) ?>" style="width:4rem;heigth:4rem; object-fit:contain" alt=""></td>
-              <td>
+              <td class="my-td_align"><?= ++$i ?></td>
+              <td class="my-td_align"><?= $cover['title'] ?></td>
+              <td><img src="<?= base_url($cover['url']) ?>" style="width:3rem;heigth:3rem; object-fit:contain" alt=""></td>
+              <td class="my-td_align">
                 <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="<?= '#coverModalUpdating' . $cover['id'] ?>"><i class="bi bi-pencil-square"></i></a>
                 <a class="confirm_del_btn btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="<?= '#coverModalDeleting' . $cover['id'] ?>"><i class="bi bi-trash-fill"></i></a>
               </td>

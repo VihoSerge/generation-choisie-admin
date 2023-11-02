@@ -50,10 +50,10 @@
           <?php $i = 0;
           foreach ($category as $categoryItem) : ?>
             <tr>
-              <td><?= ++$i ?></td>
-              <td><?= $categoryItem['name'] ?></td>
+              <td class="my-td_align"><?= ++$i ?></td>
+              <td class="my-td_align"><?= $categoryItem['name'] ?></td>
               <td><img src="<?= base_url($categoryItem['thumbnail_url']) ?>" style="width:50px;heigth:50px; object-fit:contain" alt=""></td>
-              <td>
+              <td class="my-td_align">
                 <a type="button" data-bs-toggle="modal" data-bs-target="<?= '#categoryModalUpdating' . $categoryItem['id'] ?>" class=" btn btn-primary"><i class="bi bi-pencil-square"></i></a>
                 <a class="confirm_del_btn btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="<?= '#coverModalDeleting' . $categoryItem['id'] ?>"><i class="bi bi-trash-fill"></i></a>
               </td>

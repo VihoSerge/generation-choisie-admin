@@ -49,10 +49,10 @@
           <?php $i = 0;
           foreach ($user as $userItem) : ?>
             <tr>
-              <td><?= ++$i ?></td>
-              <td><?= $userItem['name'] ?></td>
-              <td><?= $userItem['email'] ?></td>
-              <td>
+              <td class="my-td_align"><?= ++$i ?></td>
+              <td class="my-td_align"><?= $userItem['name'] ?></td>
+              <td class="my-td_align"><?= $userItem['email'] ?></td>
+              <td class="my-td_align">
                 <a type="button" data-bs-toggle="modal" data-bs-target="<?= '#userModalUpdating' . $userItem['id'] ?>" class=" btn btn-primary"><i class="bi bi-pencil-square"></i></a>
                 <a class="confirm_del_btn btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="<?= '#userModalDeleting' . $userItem['id'] ?>"><i class="bi bi-trash-fill"></i></a>
               </td>
