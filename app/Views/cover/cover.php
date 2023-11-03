@@ -67,7 +67,7 @@
                       <div class="mb-3">
                         <div class="input-group custom-file-button">
                           <label class="input-group-text" for="inputGroupFile">Image</label>
-                          <input type="file" name="file" class="form-control" id="inputGroupFile">
+                          <input type="file" name="file" class="form-control" id="inputGroupFile" accept="image/png, image/jpeg">
                         </div>
                       </div>
                       <div class="text-center">
@@ -77,7 +77,7 @@
                     </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@
         <form action="<?= base_url('cover/add') ?>" method="post" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="name" class="form-label">Libellé:</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Nom de la bannière" required>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Nom de la bannière" required accept="image/png, image/jpeg">
           </div>
           <div class="mb-3">
             <div class="input-group custom-file-button">
@@ -145,7 +145,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>

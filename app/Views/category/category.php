@@ -78,7 +78,7 @@
                       <div class="mb-3">
                         <div class="input-group custom-file-button">
                           <label class="input-group-text" for="inputGroupFile">Image</label>
-                          <input type="file" name="file" class="form-control" id="inputGroupFile">
+                          <input type="file" name="file" class="form-control" id="inputGroupFile" accept="image/png, image/jpeg">
                         </div>
                       </div>
                       <div class="text-center">
@@ -88,7 +88,7 @@
                     </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
                   </div>
                 </div>
               </div>
@@ -137,7 +137,7 @@
           <div class="mb-3">
             <div class="input-group custom-file-button">
               <label class="input-group-text" for="inputGroupFile">Image</label>
-              <input type="file" name="file" class="form-control" id="inputGroupFile">
+              <input type="file" name="file" class="form-control" id="inputGroupFile" accept="image/png, image/jpeg">
             </div>
           </div>
           <div class="text-center">
@@ -147,7 +147,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
