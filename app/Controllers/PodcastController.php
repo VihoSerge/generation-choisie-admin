@@ -22,7 +22,7 @@ class PodcastController extends BaseController
             return redirect('user/loginPage');
         }
         if ($this->request->getPost('name') == null || $this->request->getPost('url') == null) {
-            return redirect('podcast')->with('error', "Veullez saisir au moins le nom et l'URL");
+            return redirect('podcast')->with('error', "Veuillez saisir au moins le nom et l'URL");
         }
         $podcast = new PodcastModel();
         $data = [
