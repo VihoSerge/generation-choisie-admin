@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
-use CodeIgniter\API\ResponseTrait;
 
 class UserController extends BaseController
 {
@@ -35,7 +34,7 @@ class UserController extends BaseController
 
   public function logout()
   {
-    session_destroy();
+    $this->session->destroy();
     return redirect('user/loginPage');
   }
 

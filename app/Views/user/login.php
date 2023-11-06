@@ -8,9 +8,7 @@
   <!-- favicon
 		============================================ -->
   <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/logo/logo.png') ?>">
-  <link rel="stylesheet" href="style.css" />
   <title>Génération Choisi - Admin</title>
-  <script src="script.js" defer></script>
 
   <!-- Google fonts ============================================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
